@@ -16,17 +16,17 @@
   <body class="font-body h-full bg-[#FFFFFF] dark:bg-[#1D1F29] relative">
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-
+      document.documentElement.setAttribute('color-theme', 'light');
       function darkmode(mode) {
         var changebutton = document.getElementById("theme-toggle");
         if (changebutton.classList == "sr-only peer light") {
           changebutton.classList.remove("light");
           changebutton.classList.add("dark");
-          document.documentElement.classList.add("dark");
+          document.documentElement.classList.add(mode);
         } else {
           changebutton.classList.remove("dark");
           changebutton.classList.add("light");
-          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.remove(mode);
         }
       }
     </script>
